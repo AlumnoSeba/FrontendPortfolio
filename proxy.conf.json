@@ -1,0 +1,10 @@
+{
+    "/personas/*":{
+        "target":"https://backendseba.herokuapp.com",
+        "secure":false,
+        "logLevel":"debug"
+        
+    }
+
+   
+}

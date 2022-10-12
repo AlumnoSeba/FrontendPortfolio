@@ -1,0 +1,113 @@
+<section>
+    <div class="container">
+        <div class="recuadro">
+            <h5 class="texto1">PROYECTOS</h5>
+        </div>
+
+        <div class="row">
+                  <table class="table">
+                    <tr class="cuadro">
+                      <div class="row titulos">
+                        <div class="col-xs-12 col-sm-12 col-md-2 " ><td></td></div>
+                        <div class="col-xs-12 col-sm-12 col-md-4 "><td><b>PROYECTO</b></td></div>
+                        <div class="col-xs-12 col-sm-12 col-md-2 "><td><b>DESCRIPCION</b></td></div>
+                        <div class="col-xs-12 col-sm-12 col-md-2 "><td><b>PERIODO</b></td></div>
+                      </div>
+                    </tr>
+                     <tr *ngFor="let p of proyec">
+                      <div class="row">
+                         <div class="col-xs-12 col-sm-12 col-md-2" ><td><img class="logos" [src]="p.image"></td></div>
+                         <div class="col-xs-12 col-sm-12 col-md-4 texto2"><td><i>{{p.nombreProyecto}}</i></td></div>
+                         <div class="col-xs-12 col-sm-12 col-md-2 texto2"><td><i>{{p.descripcion}}</i></td></div>
+                         <div class="col-xs-12 col-sm-12 col-md-2 texto2"><td><i>{{p.periodo}}</i></td></div>
+                         <div class="col-1 texto2"><td><button type="button" data-bs-toggle="modal" data-bs-target="#miProyecto" (click)="buscar(p.id)" *ngIf="logueado"><i class="bi bi-pencil-fill"></i></button></td></div>
+                         <div class="col-1 texto2"><td><button (click)="borrar(p.id)" *ngIf="logueado"><i class="bi bi-trash-fill"></i></button></td></div>
+                         
+                        </div>   
+                     </tr>   
+                 </table> 
+        </div>
+         <!--<div style="text-align:center">
+           <button type="button" class="btn btn-primary" routerLink="/nuevoPro" *ngIf="logueado">Nuevo Proyecto</button>
+         </div>-->
+     </div>
+
+    <!--Modal Nuevo Proyecto-->
+    <div class="modal fade" id="miModalPro" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Cargar Proyecto</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <div class="form-group">
+                      <label for="nombre">Nombre del Proyecto</label>
+                      <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripcion</label>
+                        <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="descripcion" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="periodo">Periodo</label>
+                        <input type="text" class="form-control" id="periodo" name="periodo" [(ngModel)]="periodo" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="image">Imagen</label>
+                      <input type="text" class="form-control" id="image" name="image" [(ngModel)]="image" required>
+                  </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button (click)="crear()" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+      <!--Modal Editar Proyecto-->
+      <div class="modal fade" id="miProyecto" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Actualizar proyecto</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <div class="form-group">
+                      <label for="nombre">Nombre del Proyecto</label>
+                      <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="pro.nombreProyecto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripcion</label>
+                        <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="pro.descripcion" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="periodo">Periodo</label>
+                        <input type="text" class="form-control" id="periodo" name="periodo" [(ngModel)]="pro.periodo" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="image">Imagen</label>
+                      <input type="text" class="form-control" id="image" name="image" [(ngModel)]="pro.image" required>
+                  </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button (click)="update()" class="btn btn-primary">Actualizar</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    
+  </section>
+

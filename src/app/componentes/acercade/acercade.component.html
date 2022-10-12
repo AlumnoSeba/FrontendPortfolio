@@ -1,0 +1,113 @@
+<section>
+    <div class="container" style="position:absolute; top: 400px; left: 150px;">
+        <img class="perfil img-fluid" [src]="persona.imag">
+    </div>
+    <br>
+    <div class="container ">
+      <div class="row">
+          <div class="recuadro" >
+            <h5 class="texto1">ACERCA DE</h5>
+          </div>
+      </div>
+        
+        <div class="row espacio">
+           <div class="col-4 texto3"> 
+             <p><i>{{persona.nombre}} {{persona.apellido}}</i></p>
+             <p><i>{{persona.titulo}}</i></p>
+             <button type="button" data-bs-toggle="modal" data-bs-target="#miPersona" (click)="buscar(1)" *ngIf="logueado"><i class="bi bi-pencil-fill"></i></button> 
+           </div>
+           <div class="col-sm-8 texto2">
+              <p><i>{{persona.descripcion}}</i></p>
+           </div>
+        </div>
+        
+    </div>
+
+      <!--Modal Nueva Persona-->
+      <div class="modal fade" id="miModalPer" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Cargar Persona</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              
+                <form action="">
+                    <div class="form-group">
+                      <label for="nombre">Nombre</label>
+                      <input type="text" class="form-control" id="nombre" name="institucion" [(ngModel)]="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="apellido" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="titulo">Titulo</label>
+                        <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="titulo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripcion</label>
+                        <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="descripcion" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="imag">Imagen</label>
+                      <input type="text" class="form-control" id="imag" name="imag" [(ngModel)]="imag" required>
+                  </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button (click)="crear()" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!--Modal Editar Persona-->
+    <div class="modal fade" id="miPersona" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Actualizar Persona</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              
+                <form action="">
+                    <div class="form-group">
+                      <label for="nombre">Nombre</label>
+                      <input type="text" class="form-control" id="nombre" name="institucion" [(ngModel)]="persona.nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="persona.apellido" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="titulo">Titulo</label>
+                        <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="persona.titulo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripcion</label>
+                        <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="persona.descripcion" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="imag">Imagen</label>
+                      <input type="text" class="form-control" id="imag" name="imag" [(ngModel)]="persona.imag" required>
+                  </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button (click)="update()" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+  <br>
+  <br>

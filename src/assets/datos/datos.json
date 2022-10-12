@@ -1,0 +1,50 @@
+{
+"nombre": "Sebastian Angel Ledesma",
+"profesion": "Full Stack Developer Jr.",
+"imgLogo": "assets/imagenes/logo-argen.png",
+"imgInti": "assets/imagenes/inti.png",
+"imgBanner":"assets/imagenes/banner azul amarillo.jpg",
+"logoFace": "bi bi-facebook",
+"logoTwi": "bi bi-twitter",
+"logoGitH": "bi bi-github",
+"titulo": "Acerca de",
+"imgPerfil": "assets/imagenes/IMG-20220803-WA0016.jpg",
+"educacion":[
+    {
+        "imgESc": "assets/imagenes/ispigmo.jpg",
+        "nombTitulo": "Título Secundario: Economía y Gestión de las Organizaciones",
+        "periodo": "Periodo: 1999-2003",
+        "nombInsti": "Instituto Superior Particular Incorporado N°9094",
+        "Direccion":"25 de mayo 1530 Villa Ocampo, Santa Fe"
+    },
+    {
+        "imgESc": "assets/imagenes/utn.png",
+        "nombTitulo": "Carrera Universitaria icompleta: Ingenieria en Sistemas de Informacion",
+        "periodo": "Periodo: 2004-2008",
+        "nombInsti": "UTN Facultad Regional Resistencia-FRRe",
+        "Direccion":""
+    },
+    {
+        "imgESc": "assets/imagenes/ispigmo.jpg",
+        "nombTitulo": "Carrera Terciaria incompleta: Profesorado en Administracion de Empresas",
+        "periodo": "Periodo: 2011-2014",
+        "nombInsti": "General Manuel Obligado",
+        "Direccion":"25 de mayo 1530 Villa Ocampo, Santa Fe" 
+    },
+    
+    {
+        "imgESc": "assets/imagenes/SeProgramar.jpg",
+        "nombTitulo": "Certificacion: Argentina Programa: #SeProgramar",
+        "periodo": "Duracion: Octubre-Diciembre 2021",
+        "nombInsti": "Certificado expedido en el marco de desarrollo del plan Argentina Programa por el Ministerio de Desarrollo Productivo Argentina y la Camara Argentina de Software-CESSI",
+        "Direccion":"" 
+    },
+    {
+        "imgESc": "assets/imagenes/SeProgramar.jpg",
+        "nombTitulo": "Certificacion: Argentina Programa: #YoProgramo",
+        "periodo": "Duracion: Febrero-Agosto 2021",
+        "nombInsti": "Certificacion: Programador Full Stack Developer Jr. expedida en el marco de desarrollo del plan Argentina Programa por el Ministerio de Desarrollo Productivo Argentina y la Camara Argentina de Software-CESSI",
+        "Direccion":"" 
+    }
+]
+}

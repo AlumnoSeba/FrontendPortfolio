@@ -1,0 +1,135 @@
+<section>    
+    <div class="container">
+        <div class="recuadro">
+            <h5 class="texto1">EXPERIENCIA</h5>
+        </div>
+       <!-- <div>
+            <button type="button" class="btn btn-primary" routerLink="/nuevaExpe" *ngIf="islogged">Nueva Experiencia</button>
+        </div>-->
+        <div class="row">
+            <table class="table">
+                    <tr class="cuadro">
+                      <div class="row titulos">
+                        <div class="col-xs-12 col-sm-12 col-md-2" ><td></td></div>
+                        <div class="col-xs-12 col-sm-12 col-md-2"><td><b>EMPRESA</b></td></div>
+                        <div class="col-xs-12 col-sm-12 col-md-2"><td><b>ACTIVIDAD</b></td></div>
+                        <div class="col-xs-12 col-sm-12 col-md-2"><td><b>PUESTO</b></td></div>
+                        <div class="col-xs-12 col-sm-12 col-md-2"><td><b>PERIODO</b></td></div>
+                      </div>
+                    </tr>
+                    <tr *ngFor="let expe of experiencia">
+                      <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-2"><td><img class="logos" [src]="expe.image"></td></div>
+                        <div class="col-xs-12 col-sm-12 col-md-2 texto2"><td><i>{{expe.nombreEmpresa}}</i></td></div>
+                        <div class="col-xs-12 col-sm-12 col-md-2 texto2"><td><i>{{expe.actividad}}</i></td></div>
+                        <div class="col-xs-12 col-sm-12 col-md-2 texto2"><td><i>{{expe.puesto}}</i></td></div>
+                        <div class="col-xs-12 col-sm-12 col-md-2 texto2"><td><i>{{expe.periodo}}</i></td></div>
+                        <div class="col-1 texto2"><td><button type="button"  data-bs-toggle="modal" data-bs-target="#miExperiencia" (click)="buscar(expe.id)" *ngIf="islogged"><i class="bi bi-pencil-fill"></i></button></td></div>
+                        <div class="col-1 texto2"><td><button  (click)="borrar(expe.id)" *ngIf="islogged"><i class="bi bi-trash-fill"></i></button></td></div>
+                        
+                      </div>  
+                    </tr>   
+                </table>
+                
+            
+            
+
+          <!--  <div class="col-9">
+                <h5>Preceptor-Celador</h5>
+                <h6>Julio de 2010 - Duracion: 6 meses - Jornada completa</h6>
+                 <p>Llevar registro de asistencia y calificaciones. Mediar ante conflictos entre docentes y alumnos. Acompañar al alumno durante su trayectora escolar.</p>
+                
+            </div> -->
+        </div>
+        <!--<div style="text-align:center">
+          <button type="button" class="btn btn-primary" routerLink="/nuevaExpe" *ngIf="islogged">Nueva</button>
+        </div>-->
+    </div>
+
+     <!--Modal Nueva Experiencia-->
+     <div class="modal fade" id="miModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Cargar Experiencia Laboral</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <div class="form-group">
+                      <label for="empresa">Nombre de Empresa</label>
+                      <input type="text" class="form-control" id="empresa" name="empresa" [(ngModel)]="empresa" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="actividad">Actividad</label>
+                        <input type="text" class="form-control" id="actividad" name="actividad" [(ngModel)]="actividad" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="periodo">Periodo</label>
+                        <input type="text" class="form-control" id="periodo" name="periodo" [(ngModel)]="periodo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="puesto">Puesto</label>
+                        <input type="text" class="form-control" id="puesto" name="puesto" [(ngModel)]="puesto" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="image">Imagen</label>
+                      <input type="text" class="form-control" id="image" name="image" [(ngModel)]="image" required>
+                  </div>
+                   
+                </form>
+                
+            </div>
+            <div class="modal-footer">
+              <button (click)="crear()" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+     <!--Modal Edicion de Experiencia-->
+     <div class="modal fade" id="miExperiencia" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Editar Educacion</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <div class="form-group">
+                      <label for="empresa">Nombre de Empresa</label>
+                      <input type="text" class="form-control" id="empresa" name="empresa" [(ngModel)]="expeL.nombreEmpresa" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="actividad">Actividad</label>
+                        <input type="text" class="form-control" id="actividad" name="actividad" [(ngModel)]="expeL.actividad" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="periodo">Periodo</label>
+                        <input type="text" class="form-control" id="periodo" name="periodo" [(ngModel)]="expeL.periodo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="puesto">Puesto</label>
+                        <input type="text" class="form-control" id="puesto" name="puesto" [(ngModel)]="expeL.puesto" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="image">Imagen</label>
+                      <input type="text" class="form-control" id="image" name="image" [(ngModel)]="expeL.image" required>
+                  </div>
+                    
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <button (click)="update()" class="btn btn-primary">Actualizar</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>

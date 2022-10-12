@@ -1,0 +1,21 @@
+<div class="container col-md-6">
+<form action="">
+    <div class="form-group">
+      <label for="empresa">Nombre de Empresa</label>
+      <input type="text" class="form-control" id="empresa" name="empresa" [(ngModel)]="empresa" required>
+    </div>
+    <div class="form-group">
+        <label for="actividad">Actividad</label>
+        <input type="text" class="form-control" id="actividad" name="actividad" [(ngModel)]="actividad" required>
+    </div>
+    <div class="form-group">
+        <label for="periodo">Periodo</label>
+        <input type="text" class="form-control" id="periodo" name="periodo" [(ngModel)]="periodo" required>
+    </div>
+    <div class="form-group">
+        <label for="puesto">Puesto</label>
+        <input type="text" class="form-control" id="puesto" name="puesto" [(ngModel)]="puesto" required>
+    </div>
+    <button (click)="crear()" class="btn btn-primary">Guardar</button>
+  </form>
+</div>

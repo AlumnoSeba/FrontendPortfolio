@@ -1,0 +1,34 @@
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs col-sm col-md">
+                <img class="tamaño img-fluid " [src]="miPortfolio.imgLogo">
+            </div>
+          
+            
+             <div class="col-xs col-sm col-md " style="text-align: right">
+              <div> 
+                <a href="mailto:elagusno@gmail.com"><i class="bi bi-envelope-fill"></i></a> 
+                <a href="https://web.facebook.com/?_rdc=1&_rdr"><i class="bi bi-facebook"></i></a><b> </b>
+                <a href="https://www.instagram.com/seba_ledesma85/"><i class="bi bi-instagram"></i></a><b> </b>
+                <a href="https://github.com/AlumnoSeba"><i class="bi bi-github"></i></a>
+                <button type="button" class="btn btn-primary" (click)="login()" *ngIf="!isLogged">Ingresar</button>
+                <button type="button" class="btn btn-primary" (click)="onLogOut()"*ngIf="isLogged" >Cerrar Sesion</button>
+              </div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col" style="position:relative;">
+                <img class="img-fluid" [src]="miPortfolio.imgBanner" style="max-width:100%;width: 1200px;;height: 400px;">
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container" style="text-align: right">
+      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#miModal" *ngIf="isLogged">Agregar Experiencia</button> 
+      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#miModalE" *ngIf="isLogged">Agregar Educacion</button>
+      <button type="button" class="btn btn-primary btn-sm " data-bs-toggle="modal" data-bs-target="#miModalPro" *ngIf="isLogged">Agregar Proyecto</button>
+      <button type="button" class="btn btn-primary btn-sm " data-bs-toggle="modal" data-bs-target="#miModalPer" *ngIf="isLogged">Agregar Persona</button>
+    </div>
+  </header>

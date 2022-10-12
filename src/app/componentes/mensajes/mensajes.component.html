@@ -1,0 +1,65 @@
+<section>
+    <div class="container">
+    <div class="row" *ngIf="logueado">
+        <div class="recuadro">
+            <h5 class="texto1" >MENSAJES</h5>
+        </div><br>
+        <table class="table">
+          <tr class="cuadro">
+            <div class="row titulos">
+              <div class="col-xs-12 col-sm-12 col-md-1"><td></td></div>
+              <div class="col-xs-12 col-sm-12 col-md-2"><td><b>NOMBRE</b></td></div>
+              <div class="col-xs-12 col-sm-12 col-md-3"><td><b>EMAIL</b></td></div>
+              <div class="col-xs-12 col-sm-12 col-md-2"><td><b>ASUNTO</b></td></div>
+              <div class="col-xs-12 col-sm-12 col-md-4"><td><b>MENSAJE</b></td></div>
+            </div>
+          </tr>
+           <tr *ngFor="let m of mens">
+            <div class="row">
+               <div class="col-xs-12 col-sm-12 col-md-1"><td></td></div>
+               <div class="col-xs-12 col-sm-12 col-md-2 texto2"><td><i>{{m.nombre}}</i></td></div>
+               <div class="col-xs-12 col-sm-12 col-md-3 texto2"><td><i>{{m.email}}</i></td></div>
+               <div class="col-xs-12 col-sm-12 col-md-2 texto2"><td><i>{{m.asunto}}</i></td></div>
+               <div class="col-xs-12 col-sm-12 col-md-3 texto2"><td><i>{{m.mensaje}}</i></td></div>
+               <div class="col-xs-12 col-sm-12 col-md-1 texto2"><td><button (click)="eliminar(m.id)" *ngIf="logueado"><i class="bi bi-trash-fill"></i></button></td></div>
+               </div>   
+           </tr>   
+       </table> 
+    </div>
+
+    <div class="container" *ngIf="!logueado">
+        <div class="recuadro">
+            <h5 class="texto1" >CONTACTO</h5>
+        </div><br>
+        <form action="">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email" name="email" [(ngModel)]="email" required>
+            </div>
+            <div class="form-group">
+                <label for="asunto">Asunto</label>
+                <input type="text" class="form-control" id="asunto" name="asunto" [(ngModel)]="asunto" required>
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Mensaje</label>
+              <input type="text" class="form-control" id="mensaje" name="mensaje" [(ngModel)]="mensaje" required>
+           </div>
+           <div style="padding-left:4cm; padding-top: 1cm;">
+              <button (click)="crear()" class="btn btn-primary">Enviar</button>
+           </div> 
+        </form>
+        
+    </div><br>
+    <footer style="text-align:center">
+        <p>Ledesma Sebastian Angel | Todos los derechos reservados | © 2022 Argentina</p>
+        <p>Villa Ocampo, Santa Fe</p>
+    </footer>
+</div>
+</section>
+<br>
+<br>
+    

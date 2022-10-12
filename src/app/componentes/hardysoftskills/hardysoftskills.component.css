@@ -1,0 +1,29 @@
+.recuadro{
+    display: flex;
+    color: #1c81f5;
+    background-color: (0,0,0);
+    border:0; 
+    margin-left: 0cm;
+    margin-right: 0cm;
+    border-radius: 0px;
+    width: 250px;
+    height: 50px;
+    padding: auto;
+}
+.texto1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 900;
+}
+.titulos{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    
+}
+.cuadro{
+    border: 2px solid white;
+    background-color:#1c81f5;
+    color: white;
+    height: 44px;
+    text-align: center;
+}

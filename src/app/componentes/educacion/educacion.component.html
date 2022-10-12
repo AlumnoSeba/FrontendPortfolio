@@ -1,0 +1,158 @@
+<section>   
+    <div class="container">
+       <div class="recuadro">
+          <h5 class="texto1" >EDUCACION</h5>
+       </div> 
+       
+        <div class="row">
+            <table class="table">
+              <tr class="cuadro">
+                <div class="row titulos">
+                  <div class="col-xs-12 col-sm-12 col-md-2 " ><td></td></div>
+                  <div class="col-xs-12 col-sm-12 col-md-2 "><td><b>INSTITUTO</b></td></div>
+                  <div class="col-xs-12 col-sm-12 col-md-2"><td><b>DIRECCION</b></td></div>
+                  <div class="col-xs-12 col-sm-12 col-md-2"><td><b>TITULO</b></td></div>
+                  <div class="col-xs-12 col-sm-12 col-md-2"><td><b>PERIODO</b></td></div>
+                 </div>
+              </tr>
+                <tr *ngFor="let edu of educacion" >
+                  <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-2 ">
+                    <td><img class="logos" [src]="edu.imag"></td>
+                  </div> 
+                  <div class="col-xs-12 col-sm-12 col-md-2  texto2"> 
+                    <td><i>{{edu.nombreInstitucion}}</i></td>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-2 texto2 ">  
+                    <td><i>{{edu.direccion}}</i></td>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-2 texto2"> 
+                    <td><i>{{edu.titulo}}</i></td>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-2 texto2">  
+                    <td><i>{{edu.periodo}}</i></td>
+                  </div>
+                  <div class="col-1 texto2">  
+                    <td><button type="button" data-bs-toggle="modal" data-bs-target="#miEducacion" (click)="buscar(edu.id)" *ngIf="logueado"><i class="bi bi-pencil-fill"></i></button></td>
+                  </div>
+                  <div class="col-1 texto2">  
+                    <td><button (click)="eliminar(edu.id)" *ngIf="logueado"><i class="bi bi-trash-fill"></i></button></td>
+                  </div> 
+                </div> 
+                </tr>
+            </table>
+            
+           <!-- <div style="text-align:center">
+                <button type="button" class="btn btn-primary" routerLink="/nuevaEdu" *ngIf="!logueado">Nueva Educacion</button>
+            </div>-->
+        </div>
+    </div>
+    <!--Modal Nueva Educacion-->
+    <div class="modal fade" id="miModalE" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Cargar Educacion</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              
+                <form action="">
+                    <div class="form-group">
+                      <label for="institucion">Nombre de la Institucion</label>
+                      <input type="text" class="form-control" id="institucion" name="institucion" [(ngModel)]="institucion" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Direcion</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion" [(ngModel)]="direccion" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="titulo">Titulo</label>
+                        <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="titulo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="periodo">Periodo</label>
+                        <input type="text" class="form-control" id="periodo" name="periodo" [(ngModel)]="periodo" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="imag">Imagen</label>
+                      <input type="text" class="form-control" id="imag" name="imag" [(ngModel)]="imag" required>
+                  </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button (click)="crear()" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!--Modal Edicion de Educacion-->
+    <div class="modal fade" id="miEducacion" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Editar Educacion</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <div class="form-group">
+                      <label for="institucion">Nombre de la Institucion</label>
+                      <input type="text" class="form-control" id="institucion" name="institucion" [(ngModel)]="educa.nombreInstitucion" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Direcion</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion" [(ngModel)]="educa.direccion" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="titulo">Titulo</label>
+                        <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="educa.titulo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="periodo">Periodo</label>
+                        <input type="text" class="form-control" id="periodo" name="periodo" [(ngModel)]="educa.periodo" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="imag">Imagen</label>
+                      <input type="text" class="form-control" id="imag" name="imag" [(ngModel)]="educa.imag" required>
+                  </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button (click)="update()" class="btn btn-primary">Actualizar</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  </section>
+
+
+
+
+   <!--  <ul>
+            <li *ngFor="let educa of educacionList">    
+            <div class="row">
+            <div class="col-3">
+                <img class="logos" [src]="educa.imgESc">
+                
+            </div>
+             <div class="col-9">
+                
+                  <h5>{{educa.nombTitulo}}</h5>
+                  <h6>{{educa.periodo}}</h6>
+                  <p>{{educa.nombInsti}}</p>
+                  <p>{{educa.Direccion}}</p>
+            
+             </div>
+            </div>
+            </li>
+           
+            </ul>-->

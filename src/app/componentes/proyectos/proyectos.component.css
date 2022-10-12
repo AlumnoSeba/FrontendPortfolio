@@ -1,0 +1,43 @@
+.recuadro{
+    display: flex;
+    color: #1c81f5;
+    background-color: (0,0,0);
+    border:0; 
+    margin-left: 0cm;
+    margin-right: 0cm;
+    border-radius: 0px;
+    width: 180px;
+    height: 45px;
+    padding: auto;
+}
+.texto1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 900;
+}
+.texto2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    align-items: center;
+}
+.titulos{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+   
+}
+.cuadro{
+    border: 2px solid white;
+    background-color:#1c81f5;
+    color: white;
+}
+
+.header {
+    color: #36A0FF;
+    font-size: 27px;
+    padding: 10px;
+}
+
+.bigicon {
+    font-size: 35px;
+    color: #36A0FF;
+}
